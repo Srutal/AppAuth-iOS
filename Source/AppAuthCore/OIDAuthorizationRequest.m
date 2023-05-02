@@ -95,6 +95,16 @@ NSString *const OIDOAuthorizationRequestCodeChallengeMethodS256 = @"S256";
 
 @implementation OIDAuthorizationRequest
 
+static NSURLCredential *_credential;
+
++ (NSURLCredential *)credential {
+    return _credential;
+}
+
++ (void)setCredential:(NSURLCredential *)credential {
+    _credential = credential;
+}
+
 - (instancetype)init
     OID_UNAVAILABLE_USE_INITIALIZER(
         @selector(initWithConfiguration:

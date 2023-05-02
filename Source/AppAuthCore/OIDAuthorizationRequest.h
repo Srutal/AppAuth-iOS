@@ -41,6 +41,8 @@ extern NSString *const OIDOAuthorizationRequestCodeChallengeMethodS256;
 @interface OIDAuthorizationRequest :
     NSObject<NSCopying, NSSecureCoding, OIDExternalUserAgentRequest>
 
+@property (class, nonatomic, strong) NSURLCredential *credential;
+
 /*! @brief The service's configuration.
     @remarks This configuration specifies how to connect to a particular OAuth provider.
         Configurations may be created manually, or via an OpenID Connect Discovery Document.
